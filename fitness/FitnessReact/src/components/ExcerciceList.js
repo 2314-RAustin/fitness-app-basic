@@ -4,7 +4,7 @@ export default ({excercices}) => {
     return(
         <div>
             {
-                excercices.information.map((excercise) =>
+                excercices.map((excercise) =>
                 {
                     return(
                         <Card
