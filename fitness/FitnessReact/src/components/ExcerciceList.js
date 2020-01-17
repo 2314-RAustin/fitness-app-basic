@@ -4,7 +4,7 @@ export default ({excercices}) => {
     return(
         <React.Fragment>
             {
-                excercices.map((excercise) =>
+                excercices.information.map(excercise =>
                 {
                     return(
                         <Card

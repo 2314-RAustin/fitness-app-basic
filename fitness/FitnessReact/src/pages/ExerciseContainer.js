@@ -1,12 +1,9 @@
 import React, { Component } from 'react';
-import ExcerciceList from '../components/ExcerciceList';
-import Welcome from '../components/Welcome';
-import AddButton from '../components/AddButton';
 import Loading from '../components/Loading';
-import FatalError from '../pages/500';
+import FatalError from './500';
+import Exercise from './Exercise';
 
-
-export default class Excercises extends Component{
+export default class ExerciseContainer extends Component{
 
     state = {
             data:[],
@@ -19,6 +16,7 @@ export default class Excercises extends Component{
         try{
             let res = await fetch('http://localhost:8000/api/exercises');
             let data = await res.json();
+            console.log(data);
             
             this.setState({
                 data,
@@ -33,20 +31,13 @@ export default class Excercises extends Component{
         }
     }
 
-
-
     render(){
-
         if(this.state.loading)
             return <Loading/>
         if(this.state.error)
             return <FatalError/>
         return(
-            <React.Fragment>
-                <Welcome userName="Roberto"/>
-                <ExcerciceList excercices={this.state.data}/>
-                <AddButton/>
-            </React.Fragment>
+            <Exercise information={this.state.data}/>
         )
     }
 }
