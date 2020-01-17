@@ -42,11 +42,11 @@ export default class Excercises extends Component{
         if(this.state.error)
             return <FatalError/>
         return(
-            <div>
+            <React.Fragment>
                 <Welcome userName="Roberto"/>
                 <ExcerciceList excercices={this.state.data}/>
                 <AddButton/>
-            </div>
+            </React.Fragment>
         )
     }
 }

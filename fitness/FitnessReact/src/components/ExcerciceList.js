@@ -2,7 +2,7 @@ import React from 'react';
 import Card from './Card';
 export default ({excercices}) => {
     return(
-        <div>
+        <React.Fragment>
             {
                 excercices.map((excercise) =>
                 {
@@ -18,6 +18,6 @@ export default ({excercices}) => {
                     )
                 })
             }
-        </div>
+        </React.Fragment>
     )
 }

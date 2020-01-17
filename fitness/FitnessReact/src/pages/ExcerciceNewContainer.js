@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
-import ExcerciceForm from '../components/ExcerciseForm';
-import Card from '../components/Card';
+
+import ExcerciseNew from './ExcerciseNew';
+
 import Loading from '../components/Loading';
-import Error500 from '../pages/500';
+import Error500 from './500';
 import '../styles/ExerciseNew.css';
 
-export default class ExcerciceNew extends Component{
+export default class ExcerciceNewContainer extends Component{
     
     state = {
         form:{
@@ -15,7 +16,7 @@ export default class ExcerciceNew extends Component{
             leftColor:'',
             rightColor:''
         },
-        loading: false,
+        loading: false, 
         error: null
     }
 
@@ -68,16 +69,7 @@ export default class ExcerciceNew extends Component{
         }
 
         return (
-            <div className="ExerciseNew_Lateral_Spaces row">
-                <div className="col-sm ExerciseNew_Card_Space">
-                    <Card {...this.state.form}/>
-                </div>
-                <div className="col-sm ExerciseNew_Form_Space">
-                    <ExcerciceForm onChange={this.handleChange} form={this.state.form} onSubmit={this.handleSubmit} />
-                </div>
-            </div>
-
-            
+            <ExcerciseNew form={this.state.form} onChange={this.handleChange} onSubmit={this.handleSubmit}/>
         )
     }
 }
