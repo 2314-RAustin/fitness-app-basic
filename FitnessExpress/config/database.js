@@ -4,7 +4,7 @@ const DBSOURCE = `db_${process.env.NODE_ENV}.sqlite`
 
 let db = new sqlite.Database(DBSOURCE, (err) => {
     if(err) {
-        console.log(err.message)
+        console.error(err.message)
         throw err
     } else {
         console.log('Connected to SQLite')

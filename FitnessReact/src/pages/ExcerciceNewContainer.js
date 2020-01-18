@@ -1,10 +1,9 @@
 import React, { Component } from 'react';
-
 import ExcerciseNew from './ExcerciseNew';
-
 import Loading from '../components/Loading';
 import Error500 from './500';
 import '../styles/ExerciseNew.css';
+import UrlDefault from '../Config';
 
 export default class ExcerciceNewContainer extends Component{
     
@@ -45,12 +44,12 @@ export default class ExcerciceNewContainer extends Component{
                 body: JSON.stringify(this.state.form)
             }
 
-            await fetch('http://localhost:8000/api/exercises', config);
+            await fetch(`${UrlDefault}/exercises`, config);
             this.setState({
                 loading: false
             })
 
-            this.props.history.push('/excercice');
+            this.props.history.push('/exercice');
         } catch (error) {
             this.setState({
                 loading: false,

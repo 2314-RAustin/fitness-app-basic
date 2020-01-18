@@ -3,8 +3,7 @@ import ExcerciceList from '../components/ExcerciceList';
 import Welcome from '../components/Welcome';
 import AddButton from '../components/AddButton';
 
-export default (information) => {
-
+export default ({information}) => {
     return(
         <React.Fragment>
             <Welcome userName="Roberto"/>
